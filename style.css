@@ -1,0 +1,149 @@
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --card-bg: radial-gradient(circle at top, hsl(215, 20%, 17%), hsl(215, 24%, 12%));
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Overpass', sans-serif;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+/* Card Container */
+.card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 1.8rem;
+  max-width: 412px;
+  width: 100%;
+}
+
+/* Star Icon Wrapper */
+.star-icon {
+  background-color: var(--dark-blue);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+
+h1, h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+p {
+  color: var(--light-grey);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Rating Buttons Layout */
+.rating-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.rating-btn input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.rating-btn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--dark-blue);
+  color: var(--medium-grey);
+  border-radius: 50%;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Rating Hover & Selected States */
+.rating-btn:hover span {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.rating-btn input[type="radio"]:checked + span {
+  background-color: var(--white);
+  color: var(--very-dark-blue);
+}
+
+/* Focus outline for keyboard navigation */
+.rating-btn input[type="radio"]:focus-visible + span {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: var(--orange);
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+/* Thank You State Styles */
+.thank-you-state {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.illustration {
+  margin-bottom: 2rem;
+}
+
+.selected-badge {
+  display: inline-block;
+  background-color: var(--dark-blue);
+  color: var(--orange);
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+/* State Visibility Toggle */
+.hidden {
+  display: none;
+}
